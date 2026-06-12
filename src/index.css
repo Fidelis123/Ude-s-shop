@@ -6,6 +6,8 @@
   --color-accent: #A0522D;
 }
 
+@variant dark (&:where(.dark, .dark *));
+
 @layer components {
   .container {
     max-width: 80rem;
