@@ -23,7 +23,9 @@ const DarkMode = () => {
     }
 
     return (
-        <button onClick={toggleTheme}className="cursor-pointer absolute right-0 transition-all duration-300 z-10">
+        <button onClick={toggleTheme}className="cursor-pointer absolute right-0 px-4 mx-2 py-1 
+        rounded-full bg-primary/20 dark:bg-accent/20 border-none
+        transition-all duration-300 z-10">
             {theme === 'dark' ? (
                 <BsSunFill className="text-yellow-400 text-xl" />
             ): (
