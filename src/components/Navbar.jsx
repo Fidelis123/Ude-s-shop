@@ -63,7 +63,7 @@ const Navbar = () => {
   return (
     <div className="shadow-md bg-cyan-50 dark:bg-gray-900 dark:text-white z-40" >
         {/* Upper Navbar */}
-        <div className="bg-primary/40 flex items-center px-5">
+        <div className="bg-primary/40 flex items-center px-5 ">
             <div className="container justify-between items-center flex">
                 <div>
                     <a href="#"
@@ -86,16 +86,18 @@ const Navbar = () => {
                   </div>
                 </div>
                 {/* order button */}
-                <button
-                  onClick={() => alert('Ordering not avaliable yet')}
-                  className="bg-linear-to-r from-primary to-secondary transition-all duration-300 
-                  text-cyan-50 py-1 px-4 rounded-full flex items-center gap-3 group ">
-                  <span className="group-hover:block hidden transition-all duration-300">order</span>
-                  <FaCartShopping className="text-xl text-cyan-50 drop-shadow-sm cursor-pointer "/>
-                </button>
-                {/* dark mode toggle */}
-            </div>
-            <DarkMode/> 
+                <div className="flex justify-between items-center gap-4 sm:gap-6 ">
+                  <button
+                    onClick={() => alert('Ordering not avaliable yet')}
+                    className="bg-linear-to-r from-primary to-secondary transition-all absolute duration-300 
+                    text-cyan-50 py-1 px-4 rounded-full flex items-center right-12 group cursor-pointer">
+                    <span className="group-hover:block hidden transition-all duration-300">order</span>
+                    <FaCartShopping className="text-xl text-cyan-50 drop-shadow-sm cursor-pointer "/>
+                  </button>
+                  {/* dark mode toggle */}
+                  <DarkMode/> 
+                </div>
+          </div>
         </div>
         {/* Lower Navbar */}
       <div className="flex justify-center bg-accent/20 dark:bg-accent/40 ">
