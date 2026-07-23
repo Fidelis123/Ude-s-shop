@@ -100,13 +100,13 @@ const Navbar = () => {
           </div>
         </div>
         {/* Lower Navbar */}
-      <div className="flex justify-center bg-accent/20 dark:bg-accent/40 ">
+      <div className="flex justify-center bg-accent/20 dark:bg-primary-dark">
         <ul className="sm:flex hidden justify-center items-center gap-4">
           {
             Menu.map((data) => (
               <li key={data.id}>
                 <a href={data.link} className="inline-block px-3 
-                 hover:text-primary duration-200 sm:text-sm text-xs font-medium
+                 hover:text-extra duration-200 sm:text-sm text-xs font-medium
                   transition-all">
                   {data.name}</a>
               </li>
@@ -115,7 +115,7 @@ const Navbar = () => {
             {/* simple dropdown and link  */}
              <li className="group relative cursor-pointer">
               <a href="#" className="flex items-center
-               text-sm font-medium hover:text-primary 
+               text-sm font-medium 
                transition-all duration-200">
                 Trending
                 <span>
@@ -130,7 +130,7 @@ const Navbar = () => {
                   <li key={data.id}>
                     <a href={data.link} 
                     className="inline-block w-full rounded-md hover:bg-gray-50
-                     hover:text-primary transition-all duration-200 px-3 py-1 text-sm font-medium">
+                     hover:text-primary-dark transition-all duration-200 px-3 py-1 text-sm font-medium">
                       {data.name}
                     </a>
                   </li>

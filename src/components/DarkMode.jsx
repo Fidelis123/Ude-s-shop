@@ -28,7 +28,7 @@ const DarkMode = () => {
             {theme === 'dark' ? (
                 <BsSunFill className="text-yellow-400 text-xl" />
             ): (
-                <BsMoonFill className="text-primary text-xl" />
+                <BsMoonFill className="text-primary-dark text-xl" />
             )}
         </button>
     )
