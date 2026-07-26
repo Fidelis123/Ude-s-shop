@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Products from './components/Products'
 import TopProducts from './components/TopProducts'
+import Banner from './components/Banner'
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
       <Hero />
       <Products />
       <TopProducts />
+      <Banner />
     </div>
   )
 }
