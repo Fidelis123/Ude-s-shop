@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from "motion/react";
 import img1 from '../assets/products/greenone.jpeg'
 import img2 from '../assets/products/Manfinity Streetrush Men.jpeg'
-import img3 from '../assets/products/greenT.jpeg'
+import img3 from '../assets/products/white.jpeg'
 import { FaStar } from 'react-icons/fa'
 
 
@@ -53,7 +53,7 @@ const TopProducts = () => {
           {
             ProductsData.map ((data) => (
               <motion.div className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black 
-                dark:hover:bg-crown hover:text-white relative shadow-xl duration-300 group max-w-75"
+                dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-75"
                 initial={{ opacity: 0, scale: 0.9, y: 30,}}
                   whileInView={{ opacity: 1, scale: 1, y:0,}}
                   viewport={{ once: true, amount: 0.2 }}

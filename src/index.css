@@ -3,12 +3,13 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #5C2D0E;
-  --color-secondary: #8B4513;
+  --color-primary: #CDB79E;
+  --color-secondary: #5C2D0E;
   --color-accent: #A0522D;
   --color-extra: #9e8f87;
   --color-primary-dark: #272933;
   --color-crown: #BF913B;
+  --color-way: #8B4513;
     /* --color-primary: #32000c; */
 }
 
