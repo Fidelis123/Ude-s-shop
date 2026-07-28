@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from "motion/react";
-import img1 from '../assets/products/white T.webp'
+import img1 from '../assets/products/greenone.jpeg'
 import img2 from '../assets/products/Manfinity Streetrush Men.jpeg'
-import img3 from '../assets/products/greenT.webp'
+import img3 from '../assets/products/greenT.jpeg'
 import { FaStar } from 'react-icons/fa'
 
 
