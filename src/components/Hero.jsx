@@ -97,7 +97,7 @@ const Hero = () => {
                 {/* image section */}
                 <section className="order-1 sm:order-2 flex items-center justify-center">
                   <motion.div className="relative z-10"
-                      inital={{opacity: 0, x: 80, scale: 0.8}}
+                      initial={{opacity: 0, x: 80, scale: 0.8}}
                       animate={{opacity: 1, x: 10, scale: 1}}
                       transition = {{
                       duration: 0.8,
@@ -108,8 +108,9 @@ const Hero = () => {
                     <img
                       src={item.img}
                       alt={item.tittle}
-                      className="w-80 h-80 sm:h-110 sm:w-110 mt-5 z-10
-                      sm:scale-100 object-cover object-center rounded-full border-4 border-primary"
+                      className="w-75 h-75 md:w-75 md:h-75 sm:h-100 sm:w-100 mt-5 z-10
+                      sm:scale-100 object-cover object-center
+                      rounded-full border-4 border-primary"
                     />
                   </motion.div>
                 </section>

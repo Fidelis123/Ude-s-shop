@@ -52,8 +52,8 @@ const TopProducts = () => {
             md:grid-cols-3 gap-20 md:gap-5 place-items-center">
           {
             ProductsData.map ((data) => (
-              <motion.div className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black 
-                dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-75"
+              <motion.div className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
+                dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-75 "
                 initial={{ opacity: 0, scale: 0.9, y: 30,}}
                   whileInView={{ opacity: 1, scale: 1, y:0,}}
                   viewport={{ once: true, amount: 0.2 }}

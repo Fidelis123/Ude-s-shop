@@ -18,25 +18,16 @@ const Menu = [
     link: '/#Services'
   },
   {
-    id: 3,
-    name: 'kids wear',
-    link: '/#'
-  },
-  {
-    id:4,
+    id:3,
     name: 'Mens Wear',
     link: '/#'
   },
   {
-    id:5,
+    id:4,
     name: 'Womens Wear',
     link: '/#'
   },
-  {
-    id:6,
-    name: 'Electronics',
-    link: '/#'
-  }
+  
 ]
 
 const DropdownLinks = [

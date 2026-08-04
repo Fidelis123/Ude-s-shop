@@ -5,6 +5,7 @@ import Products from './components/Products'
 import TopProducts from './components/TopProducts'
 import Banner from './components/Banner'
 import Subscribe from './components/Subscribe'
+import Testimonial from './components/Testimonial'
 
 const App = () => {
 
@@ -18,6 +19,8 @@ const App = () => {
       <TopProducts />
       <Banner />
       <Subscribe />
+      <Products />
+      <Testimonial />
     </div>
   )
 }

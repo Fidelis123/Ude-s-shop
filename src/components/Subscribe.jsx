@@ -38,7 +38,7 @@ const Subscribe = () => {
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             type="text"
             placeholder="Enter your email" 
-            className="w-full p-3 bg-white rounded-2xl border border-accent "/>
+            className="w-full p-3 text-secondary bg-white rounded-2xl border border-accent "/>
         </div>
       </div>
     </motion.div>
