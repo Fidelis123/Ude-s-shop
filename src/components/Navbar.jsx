@@ -50,7 +50,7 @@ const DropdownLinks = [
 ]
 
 
-const Navbar = () => {
+const Navbar = ({ handleOrderPopup }) => {
   return (
     <div className="shadow-md bg-cyan-50 dark:bg-gray-900 dark:text-white z-40" >
         {/* Upper Navbar */}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 {/* order button */}
                 <div className="flex justify-between items-center gap-4 sm:gap-6 ">
                   <button
-                    onClick={() => alert('Ordering not avaliable yet')}
+                    onClick={handleOrderPopup}
                     className="bg-linear-to-r from-primary to-secondary transition-all absolute duration-300 
                     text-cyan-50 py-1 px-4 rounded-full flex items-center right-12 group cursor-pointer">
                     <span className="group-hover:block hidden transition-all duration-300">order</span>
@@ -91,7 +91,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Lower Navbar */}
-      <div className="flex justify-center bg-accent/20 dark:bg-primary-dark">
+      <div className="flex justify-center bg-accent/20 dark:bg-dar-onek">
         <ul className="sm:flex hidden justify-center items-center gap-4">
           {
             Menu.map((data) => (

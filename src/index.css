@@ -7,6 +7,10 @@
   --color-secondary: #5C2D0E;
   --color-accent: #A0522D;
   --color-extra: #9e8f87;
+  --color-dark-one: #2C1A0E;
+  --color-dark-two: #1C0D0A;
+  --color-dark-three: #231812;
+  --color-dark-four: #1A1008;
   --color-primary-dark: #272933;
   --color-crown: #BF913B;
   --color-way: #8B4513;
@@ -33,7 +37,7 @@
     }
 
       .btn-primary {
-      background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+      background: linear-gradient(to right, var(--color-dark-three), var(--color-secondary));
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 9999px;
@@ -46,10 +50,10 @@
       } */
 
     .btn-primary:hover {
-      background: var(--color-extra);
+      background: var(--color-dark-two);
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(158, 143, 135, 0.4);
+      box-shadow: 0 10px 25px rgba(146, 116, 102, 0.4);
     }
   }
 

@@ -81,7 +81,7 @@ const Testimonial = () => {
                     className="flex flex-col
                     gap-4 py-8 px-6 mx-4 bg-primary/10 relative
                     rounded-xl 
-                    shadow-md dark:bg-primary-dark"
+                    shadow-md dark:bg-primary-dark"  
                   >
                     <div className="mb-4 ">
                       <img
@@ -94,7 +94,7 @@ const Testimonial = () => {
                     <div className="flex flex-col items-center gap-4">
                       <div>
                           <p className="text-gray-500 tex-xs">{data.text}</p>
-                          <h1 className="text-xl font-bold text-black/80 dark:text-light ">{data.name}</h1>
+                          <h1 className="text-xl font-bold text-black/80 dark:text-white ">{data.name}</h1>
                       </div>
                     
                     </div>

@@ -31,7 +31,7 @@ const ProductsData = [
 
 
 
-const TopProducts = () => {
+const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
       <div className="container">
@@ -53,7 +53,7 @@ const TopProducts = () => {
           {
             ProductsData.map ((data) => (
               <motion.div className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
-                dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-75 "
+                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group max-w-75 "
                 initial={{ opacity: 0, scale: 0.9, y: 30,}}
                   whileInView={{ opacity: 1, scale: 1, y:0,}}
                   viewport={{ once: true, amount: 0.2 }}
@@ -80,7 +80,7 @@ const TopProducts = () => {
                   <h1 className="text-xl font-bold">{data.title}</h1>
                   <p className="text-gray-500 group-hover:text-white 
                   duration-300 text-sm line-clamp-2">{data.description}</p>
-                  <button  className="btn-primary btn-primary:hover mt-2" >Order Now</button>
+                  <button  className="btn-primary btn-primary:hover mt-2" onClick={handleOrderPopup}>Order Now</button>
                 </div>
               </motion.div>
             ))

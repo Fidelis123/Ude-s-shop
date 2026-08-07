@@ -79,7 +79,8 @@ const Products = () => {
             {
               ProductsData.map((data)=> (
                 <motion.div keys= {data.id}
-                  className="space-y-3 bg-primary dark:bg-primary-dark p-3 rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="space-y-3 bg-primary/20 dark:bg-primary-dark p-3 rounded-md 
+                  shadow-md hover:shadow-lg transition-shadow duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -93,8 +94,8 @@ const Products = () => {
                   className="h-55 w-40.5 object-cover rounded-md"/>
 
                   <div className="space-y-1">
-                    <h3 className="font-semibold text-white">{data.title}</h3>
-                    <p className="text-sm text-gray-300">{data.color}</p>
+                    <h3 className="font-semibold text-cyan-500">{data.title}</h3>
+                    <p className="text-sm text-gray-600">{data.color}</p>
                     <div className="flex items-center gap-1 ">
                       <FaStar className="text-yellow-400"/>
                       <span>{data.rating}</span>

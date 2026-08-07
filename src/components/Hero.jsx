@@ -30,11 +30,11 @@ const ImageList = [
   
 ];
 
-const Hero = () => {
+const Hero = ({ handleOrderPopup }) => {
   return (
     <section
       className="relative overflow-hidden min-h-137.5 sm:min-h-162.5
-      bg-extra/50 flex items-center justify-center dark:bg-primary-dark
+      bg-extra/50 flex items-center justify-center dark:bg-dark-three
       dark:text-white duration-200"
     >
       {/* background pattern */}
@@ -86,7 +86,7 @@ const Hero = () => {
                     }}
                   >
                     <button
-                      onClick={() => alert("Ordering not available yet")}
+                      onClick={ handleOrderPopup }
                       className="btn-primary ml-1 mb-10"
                     >
                       Order Now
@@ -96,9 +96,10 @@ const Hero = () => {
 
                 {/* image section */}
                 <section className="order-1 sm:order-2 flex items-center justify-center">
-                  <motion.div className="relative z-10"
+                  <motion.div className="relative z-10 flex justify-center"
                       initial={{opacity: 0, x: 80, scale: 0.8}}
-                      animate={{opacity: 1, x: 10, scale: 1}}
+                      whileInView={{opacity: 1, x: 0, scale: 1}}
+                      viewport={{ once: true }}
                       transition = {{
                       duration: 0.8,
                       delay: 0.3,
@@ -107,8 +108,9 @@ const Hero = () => {
                   >
                     <img
                       src={item.img}
-                      alt={item.tittle}
-                      className="w-75 h-75 md:w-75 md:h-75 sm:h-100 sm:w-100 mt-5 z-10
+                      alt=""
+                      className="w-75 h-75 md:w-85 md:h-85 sm:h-100
+                       sm:w-100 mt-5 z-10
                       sm:scale-100 object-cover object-center
                       rounded-full border-4 border-primary"
                     />
