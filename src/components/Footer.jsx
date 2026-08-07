@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "motion/react";
-import FooterLogo from '../assets/Logo.png'
+import FooterLogo from '../assets/website/logo.png'
 import Banner from '../assets/website/footerbanner.png'
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaLocationArrow, FaMobileAlt } from 'react-icons/fa'
 
