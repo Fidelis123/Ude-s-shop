@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Products from './components/Products'
-import TopProducts from './components/TopProducts'
-import Banner from './components/Banner'
-import Subscribe from './components/Subscribe'
-import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
 import PopUp from './components/PopUp'
+import Home from './pages/Home'
+import MensWear from './pages/MensWear'
+import WomensWear from './pages/WomensWear'
+import TopRated from './pages/TopRated'
+
 
 
 
@@ -22,13 +22,13 @@ const App = () => {
     <div className="bg-white dark:bg-dark-four transition-all 
     duration-200 dark:text-white ">
       <Navbar handleOrderPopup={handleOrderPopup} />
-      <Hero handleOrderPopup={handleOrderPopup}  />
-      <Products />
-      <TopProducts handleOrderPopup={handleOrderPopup}  />
-      <Banner />
-      <Subscribe />
-      <Products />
-      <Testimonial />
+      
+      <Routes>
+        <Route path="/" element={<Home handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/mens-wear" element={<MensWear />} />
+        <Route path="/womens-wear" element={<WomensWear />} />
+        <Route path="/top-rated" element={<TopRated />} />
+      </Routes>
       <Footer />
       <PopUp orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
