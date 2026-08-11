@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/website/logo.png'
 import { IoMdSearch } from 'react-icons/io'
 import { FaCartShopping } from 'react-icons/fa6'
 import { FaCaretDown } from 'react-icons/fa6'
+import { FaBars, FaXmark } from 'react-icons/fa6'
 import DarkMode from './DarkMode'
 
 
