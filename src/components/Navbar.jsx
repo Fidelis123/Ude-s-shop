@@ -93,22 +93,24 @@ const Navbar = ({ handleOrderPopup }) => {
                 className="w-10 h-10 rounded-full object-cover"
               />
 
-              <span>Ude's shop</span>
+              <span className="whitespace-nowrap">Ude's shop</span>
             </a>
 
 
             {/* ================= DESKTOP SEARCH ================= */}
 
-            <div className="hidden sm:block">
+            <div className="hidden sm:block shrink-0">
               <div className="relative group">
 
                 <input
                   type="text"
                   placeholder="Search..."
                   className="
-                    w-50
-                    sm:w-64
-                    group-hover:w-75
+                    w-36
+                    md:w-50
+                    lg:w-64
+                    group-hover:w-44
+                    lg:group-hover:w-75
                     transition-all
                     duration-300
                     rounded-full
@@ -130,6 +132,7 @@ const Navbar = ({ handleOrderPopup }) => {
                     top-1/2
                     -translate-y-1/2
                     text-gray-500
+                    group-hover:text-primary
                   "
                 />
 
@@ -138,7 +141,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
 
             {/* ================= RIGHT SIDE ================= */}
-            <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
 
               {/* ORDER BUTTON */}
               <button
@@ -191,7 +194,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
       {/* ================= DESKTOP NAVIGATION ================= */}
 
-      <div className="hidden sm:flex justify-center bg-accent/20 dark:bg-dark-one">
+      <div className="hidden z-10 sm:flex justify-center bg-accent/20 dark:bg-dark-one">
 
         <ul className="flex items-center justify-center gap-2 py-3">
 
@@ -266,13 +269,8 @@ const Navbar = ({ handleOrderPopup }) => {
 
         <div
           className="
-            sm:hidden
-            bg-accent/20
-            dark:bg-dark-one
-            border-t
-            border-white/10
-            shadow-lg
-          "
+            sm:hidden bg-primary dark:bg-dark-one border-t border-white/10 
+            shadow-lg absolute top-full left-0 w-full z-50"
         >
 
           <div className="px-5 py-5">
@@ -285,26 +283,14 @@ const Navbar = ({ handleOrderPopup }) => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="
-                  w-full
-                  rounded-full
-                  px-4
-                  py-2.5
-                  bg-white
-                  text-primary
-                  placeholder:text-gray-400
-                  focus:outline-none
-                "
+
+                className="w-full rounded-full px-4 py-2.5 bg-white
+               text-primary placeholder:text-gray-400 focus:outline-none"
               />
 
               <IoMdSearch
                 className="
-                  absolute
-                  right-4
-                  top-1/2
-                  -translate-y-1/2
-                  text-gray-500
-                "
+                  absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
               />
 
             </div>
@@ -321,15 +307,9 @@ const Navbar = ({ handleOrderPopup }) => {
                   <a
                     href={item.link}
                     onClick={closeMenu}
-                    className="
-                      block
-                      px-4
-                      py-3
-                      rounded-lg
-                      font-medium
-                      hover:bg-primary/30  
-                      transition-all
-                    "
+                    className="block px-4 py-3 rounded-lg font-medium text-black/80
+                    hover:bg-white/20 hover:text-white hover:pl-6
+                    transition-all duration-200"
                   >
                     {item.name}
                   </a>
@@ -345,8 +325,9 @@ const Navbar = ({ handleOrderPopup }) => {
                 <button
                   onClick={() => setMobileDropdown(!mobileDropdown)}
                   className="w-full flex items-center justify-between
-                  px-4 py-3 rounded-lg 
-                  hover:bg-primary transition-all duration-200"
+                  px-4 py-3 rounded-lg text-white font-medium
+                  hover:bg-white/20 hover:pl-6
+                  transition-all duration-200"
                 >
                   <span className="font-medium">
                     Trending
@@ -371,10 +352,9 @@ const Navbar = ({ handleOrderPopup }) => {
                           setOpen(false);
                           setMobileDropdown(false);
                         }}
-                        className="block px-8 py-2
-                        hover:text-primary hover:bg-primary/30 rounded-lg
-                        transition-all duration-200"
-                      >
+                        className="block px-8 py-2 text-black/80
+                        hover:text-white hover:bg-white/20 hover:pl-10
+                        rounded-lg transition-all duration-200">
                         {data.name}
                       </a>
                     ))}
