@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/website/logo.png";
+import { FaUser } from "react-icons/fa6";
 
 import { IoMdSearch } from "react-icons/io";
 import {
@@ -143,20 +144,35 @@ const Navbar = ({ handleOrderPopup }) => {
             {/* ================= RIGHT SIDE ================= */}
             <div className="flex items-center gap-2 sm:gap-4 shrink-0">
 
-              {/* ORDER BUTTON */}
+              {/* ORDER BUTTON - DESKTOP ONLY */}
               <button
                 onClick={handleOrderPopup}
-                className="btn-primary flex items-center gap-2 h-9 px-3.5 sm:px-4.5 rounded-full text-xs sm:text-sm font-semibold cursor-pointer hover:scale-105 transition-all duration-300 group"
+                className="hidden  btn-primary sm:flex items-center 
+                gap-2 h-9 px-3.5 sm:px-4.5 rounded-full 
+                text-xs sm:text-sm font-semibold cursor-pointer
+                hover:scale-105 transition-all duration-300 group"
               >
                 <span className="hidden sm:inline">
                   Order
                 </span>
 
-                <FaCartShopping className="text-sm sm:text-base group-hover:scale-110 transition-transform duration-200" />
+                <FaCartShopping className="text-sm sm:text-base
+                group-hover:scale-110 transition-transform duration-200" />
               </button>
 
-              {/* DARK MODE */}
-              <DarkMode />
+              {/* DARK MODE - DESKTOP ONLY */}
+              <div className="hidden sm:block">
+                <DarkMode />
+              </div>
+
+              {/* USER PROFILE - DESKTOP ONLY */}
+              <div className="relative hidden sm:block">
+                <button className="flex items-center gap-2 cursor-pointer
+                 px-3 py-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 
+                 transition-all duration-200">
+                  <FaUser className="text-lg" />
+                </button>
+              </div>
 
               {/* MOBILE MENU BUTTON */}
               <button
@@ -268,6 +284,45 @@ const Navbar = ({ handleOrderPopup }) => {
         >
 
           <div className="px-5 py-5">
+
+            {/* Mobile action buttons */}
+
+            <div className="flex items-center justify-center gap-3 mb-5">
+
+            {/* Order */}
+
+            <button
+              onClick={handleOrderPopup}
+              className="btn-primary flex 
+              items-center gap-2 h-9 px-4 
+              sm:px-4.5 rounded-full text-xs 
+              sm:text-sm font-semibold cursor-pointer 
+              hover:scale-105 transition-all duration-300 group"
+            >
+              <span>Order</span> 
+
+
+              <FaCartShopping className="text-base group-hover:scale-110 
+                transition-transform duration-200" />
+            </button>
+
+            {/* Darkmode */}
+
+            <DarkMode />
+
+            {/* User Profile */}
+
+            <button className="flex items-center justify-center 
+            w-9 h-9 rounded-full bg-white/30 hover:bg-white/50
+            text-black/80 dark:text-white 
+            transition-all duration-300" aria-label="User profile">
+
+              <FaUser className="text-lg" />
+            </button>
+
+            </div>
+
+
 
 
             {/* MOBILE SEARCH */}
