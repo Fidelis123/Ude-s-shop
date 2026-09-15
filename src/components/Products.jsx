@@ -73,14 +73,14 @@ const Products = () => {
         </div>
         {/* Body section  */}
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-3
-          md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3
+          md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center gap-4 sm:gap-5">
             {/* cards section */}
             {
               ProductsData.map((data)=> (
-                <motion.div keys= {data.id}
+                <motion.div key={data.id}
                   className="space-y-3 bg-primary/20 dark:bg-primary-dark p-3 rounded-md 
-                  shadow-md hover:shadow-lg transition-shadow duration-300"
+                  shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-48 flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -90,13 +90,13 @@ const Products = () => {
                   ease: "easeOut",
                   }}
                 >
-                  <img src={data.img} alt=""
-                  className="h-55 w-40.5 object-cover rounded-md"/>
+                  <img src={data.img} alt={data.title}
+                  className="h-48 sm:h-52 w-full object-cover rounded-md"/>
 
-                  <div className="space-y-1">
-                    <h3 className="font-semibold text-cyan-500">{data.title}</h3>
-                    <p className="text-sm text-gray-600">{data.color}</p>
-                    <div className="flex items-center gap-1 ">
+                  <div className="space-y-1 w-full">
+                    <h3 className="font-semibold text-cyan-600 dark:text-cyan-400">{data.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{data.color}</p>
+                    <div className="flex items-center justify-center gap-1">
                       <FaStar className="text-yellow-400"/>
                       <span>{data.rating}</span>
                     </div>
@@ -106,8 +106,7 @@ const Products = () => {
           </div>
                {/* view more */}
                <div className="flex justify-center">
-                  <button className="btn-primary btn-primary:hover mt-10 py-1 "
-                  >View More </button>
+                  <button className="btn-primary mt-10 py-2 px-6">View More</button>
                </div>
         </div>
       </div>

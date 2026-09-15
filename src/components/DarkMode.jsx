@@ -22,13 +22,19 @@ const DarkMode = () => {
     }
 
     return (
-        <button onClick={toggleTheme}className="cursor-pointer right-0 
-        px-1 mx-4 py-1 rounded-full bg-primary/20 dark:bg-accent/20 
-        border-none transition-all duration-300 z-10 ">
+        <button
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+            className="cursor-pointer right-0 p-2 mx-2 rounded-full 
+            bg-black/5 hover:bg-black/10 text-stone-700
+            dark:bg-white/10 dark:hover:bg-white/20 dark:text-yellow-400
+            border border-black/10 dark:border-white/15
+            transition-all duration-300 z-10 flex items-center justify-center hover:scale-105"
+        >
             {theme === 'dark' ? (
-                <BsSunFill className="text-yellow-400 text-xl" />
+                <BsSunFill className="text-yellow-400 text-lg" />
             ): (
-                <BsMoonFill className="text-primary-dark text-xl" />
+                <BsMoonFill className="text-secondary text-lg" />
             )}
         </button>
     )

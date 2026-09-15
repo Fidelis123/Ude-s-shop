@@ -51,7 +51,7 @@ const Hero = ({ handleOrderPopup }) => {
         {ImageList.map((item) => (
           <SwiperSlide key={item.id}>
             <div
-              className="relative w-full aspect-[2/1] overflow-hidden select-none bg-stone-100 dark:bg-dark-three"
+              className="relative w-full aspect-2/1 overflow-hidden select-none bg-stone-100 dark:bg-dark-three"
               style={{ aspectRatio: "2 / 1" }}
             >
               <img

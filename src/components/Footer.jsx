@@ -1,8 +1,11 @@
 import React from 'react'
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import FooterLogo from '../assets/website/logo.png'
 import Banner from '../assets/website/footerbanner.png'
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaLocationArrow, FaMobileAlt } from 'react-icons/fa'
+import { FaHeadset } from 'react-icons/fa6';
+
+
 
 const BannerImg ={
     backgroundImage: `url(${Banner})`,
@@ -37,6 +40,8 @@ const FooterLinks = [
 
 
 const footer = () => {
+    const [isopen, setIsOpen] = React.useState(false);
+
   return (
     <div style={BannerImg} className="text-white">
         <div className="container py-10 ">
@@ -130,19 +135,32 @@ const footer = () => {
             Designed by <span className="font-bold text-orange-300">Udenwa.dev</span>
         </div>
         <div className="text-center py-6 text-sm text-gray-500">
-            Copywrite &copy; 2023 Ude's shop. All rights reserved.
+            Copywrite &copy; 2026 Ude's shop. All rights reserved.
         </div>
       </div>
-      <div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              exit={{ opacity: 0, y: 20 }}
-              className="fixed bottom-4 right-4 bg-primary text-white p-4 rounded-lg shadow-lg z-50">
-                <p>This is a simple pop-up message.</p>
-            </motion.div>
+
+      {/* Customer service widget */}
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+        <AnimatePresence>
+            {isopen && (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="h-12 bg-primary text-white px-4 rounded-lg shadow-lg flex items-center"
+                >
+                    <p className="whitespace-nowrap">customer service</p>
+                </motion.div>
+            )}
+        </AnimatePresence>
+            <button 
+            onclick={() => setIsOpen(!isopen)}
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+            className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                <FaHeadset size={20}/>
+            </button>
           </div>
     </div>
   )

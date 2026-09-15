@@ -42,7 +42,7 @@ const App = () => {
 
   return (
     <div className="bg-white dark:bg-dark-four transition-all 
-    duration-200 dark:text-white">
+    duration-200 dark:text-white min-h-screen w-full overflow-x-hidden">
       <Navbar handleOrderPopup={handleOrderPopup} />
       
       <Routes>

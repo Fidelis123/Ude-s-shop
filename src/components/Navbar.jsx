@@ -146,22 +146,13 @@ const Navbar = ({ handleOrderPopup }) => {
               {/* ORDER BUTTON */}
               <button
                 onClick={handleOrderPopup}
-                className="
-                  flex items-center gap-2
-                  h-9 px-3 sm:px-4
-                  rounded-full
-                  bg-linear-to-r from-primary to-secondary
-                  text-white
-                  cursor-pointer
-                  hover:scale-105
-                  transition-all duration-300
-                "
+                className="btn-primary flex items-center gap-2 h-9 px-3.5 sm:px-4.5 rounded-full text-xs sm:text-sm font-semibold cursor-pointer hover:scale-105 transition-all duration-300 group"
               >
-                <span className="hidden sm:block text-sm">
+                <span className="hidden sm:inline">
                   Order
                 </span>
 
-                <FaCartShopping className="text-lg" />
+                <FaCartShopping className="text-sm sm:text-base group-hover:scale-110 transition-transform duration-200" />
               </button>
 
               {/* DARK MODE */}
@@ -170,15 +161,18 @@ const Navbar = ({ handleOrderPopup }) => {
               {/* MOBILE MENU BUTTON */}
               <button
                 onClick={() => setOpen(!open)}
+                aria-label="Toggle navigation menu"
                 className="
                   sm:hidden
                   flex items-center justify-center
                   w-9 h-9
                   rounded-full
-                  bg-secondary/40
-                  text-white
-                  text-xl
+                  bg-black/10 hover:bg-black/15 text-stone-800
+                  dark:bg-white/10 dark:hover:bg-white/20 dark:text-white
+                  border border-black/5 dark:border-white/10
+                  text-lg
                   cursor-pointer
+                  transition-all duration-200
                 "
               >
                 {open ? <FaXmark /> : <FaBars />}

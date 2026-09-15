@@ -8,7 +8,7 @@ import { GiFoodTruck } from 'react-icons/gi'
 const Banner = () => {
   return (
     <div className="min-h-135.5 flex justify-center
-    items-center py-12 sm:py-0">
+    items-center py-12 sm:py-0 overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 
         gap-6 items-center">
@@ -23,13 +23,13 @@ const Banner = () => {
               ease: "easeOut",
               }}
           >
-            <img src={BannerImg} alt="" 
-            className="max-w-150  w-full mx-auto 
-            drop-shadow-[-10px_10px_12px_rgba(0,0,0.1)]
+            <img src={BannerImg} alt="Winter Sale Banner" 
+            className="max-w-full w-full mx-auto 
+            drop-shadow-[-10px_10px_12px_rgba(0,0,0,0.1)]
              object-cover" />
           </motion.div>
           {/* text details section */}
-          <div claaName="flex flex-col justify-center gap-6 sm:pt-0">
+          <div className="flex flex-col justify-center gap-6 sm:pt-0">
             <h1 className="text-3xl sm:text-4xl font-bold">Winter Sale upto 50% off</h1>
             <p className="text-sm text-gray-500 tracking-wide leading-5"> Don't miss out on our biggest sale of the 
               season! Shop the latest trends in fashion, 

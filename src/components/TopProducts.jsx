@@ -49,11 +49,11 @@ const TopProducts = ({ handleOrderPopup }) => {
         {/* body section */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2
-            md:grid-cols-3 gap-20 md:gap-5 place-items-center">
+            md:grid-cols-3 gap-14 sm:gap-10 md:gap-6 place-items-center">
           {
-            ProductsData.map ((data) => (
-              <motion.div className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
-                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group max-w-75 "
+            ProductsData.map((data) => (
+              <motion.div key={data.id} className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
+                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group w-full max-w-[280px]"
                 initial={{ opacity: 0, scale: 0.9, y: 30,}}
                   whileInView={{ opacity: 1, scale: 1, y:0,}}
                   viewport={{ once: true, amount: 0.2 }}
@@ -66,11 +66,11 @@ const TopProducts = ({ handleOrderPopup }) => {
                 >
                 {/* image section */}
                 <div className="h-25">
-                  <img src={data.img} alt="" className= "h-50 w-45 rounded-2xl max-w-45 block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md "/>
+                  <img src={data.img} alt={data.title} className="h-48 w-44 rounded-2xl max-w-full block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md object-cover"/>
                 </div>
                 <div className="p-4 text-center mt-5 ">
                   {/* start rating */}
-                  <div className="w-full flex items-cneter
+                  <div className="w-full flex items-center
                     justify-center gap-1">
                     <FaStar className="text-yellow-500"/>
                     <FaStar className="text-yellow-500"/>
@@ -80,7 +80,7 @@ const TopProducts = ({ handleOrderPopup }) => {
                   <h1 className="text-xl font-bold">{data.title}</h1>
                   <p className="text-gray-500 group-hover:text-white 
                   duration-300 text-sm line-clamp-2">{data.description}</p>
-                  <button  className="btn-primary btn-primary:hover mt-2" onClick={handleOrderPopup}>Order Now</button>
+                  <button className="btn-primary mt-2" onClick={handleOrderPopup}>Order Now</button>
                 </div>
               </motion.div>
             ))
