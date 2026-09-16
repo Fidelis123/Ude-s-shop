@@ -23,6 +23,7 @@ import Contact from './pages/Contact'
 import OrderSuccess from './pages/OrderSuccess'
 import OrderHistory from './pages/OrderHistory'
 import NotFound from './pages/NotFound'
+import Blog from './pages/Blog'
 
 // Admin Pages
 import AdminLogin from './admin/AdminLogin'
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/top-rated" element={<TopRated />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
 
         {/* ================= AUTH ROUTES ================= */}
         <Route path="/signin" element={<SignIn />} />

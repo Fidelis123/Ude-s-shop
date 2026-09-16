@@ -37,6 +37,11 @@ const Menu = [
     name: "Womens Wear",
     link: "/womens-wear",
   },
+  {
+    id: 5,
+    name: "Contact",
+    link: "/Contact",
+  },
 ];
 
 
@@ -57,6 +62,11 @@ const DropdownLinks = [
     id: 3,
     name: "Top Rated",
     link: "/top-rated",
+  },
+  {
+    id: 4,
+    name: "Blog",
+    link: "/blog",
   },
 ];
 
@@ -237,7 +247,7 @@ const Navbar = ({ handleOrderPopup }) => {
               href="#"
               className="flex items-center text-sm font-medium transition-all duration-200"
             >
-              Trending
+              Categories
 
               <span>
                 <FaCaretDown

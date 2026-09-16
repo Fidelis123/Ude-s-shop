@@ -4,111 +4,45 @@ import img2 from "../assets/products/flower dress.jpeg";
 import img3 from "../assets/products/lofers.jpeg";
 import img4 from "../assets/products/brown suilts.jpeg";
 import img5 from "../assets/products/burgundy.jpeg";
-import { FaStar } from "react-icons/fa6" ;
-import { motion } from "motion/react";
-
-
+import img6 from "../assets/products/greenT.jpeg";
+import img7 from "../assets/products/greenone.jpeg";
+import img8 from "../assets/products/New Balance 993.jpeg";    
 
 const ProductsData = [
-  {
-    id: 1,
-    img: img1,
-    title: "Ankara",
-    rating: 5.0,
-    color: "  Burgundy",
-    aosDelay: "0",
-  },
-
-  {
-    id: 2,
-    img: img2,
-    title: "Women dress",
-    rating: 4.5,
-    color: "White",
-    aosDelay: "200",
-  },
-
-  {
-    id: 3,
-    img: img3,
-    title: "Shoes",
-    rating: 4.7,
-    color: "Brown",
-    aosDelay: "400",
-  },
-
-  {
-    id: 4,
-    img: img4,
-    title: "Mens fit",
-    rating: 5.0,
-    color: "Burgundy",
-    aosDelay: "600",
-  },
-
-  {
-    id: 5,
-    img: img5,
-    title: "Bags",
-    rating: 4.5,
-    color: "Burgundy",
-    aosDelay: "800",
-  },
-
-  
-
+  { id: 1, img: img1, title: "Ankara" },
+  { id: 2, img: img2, title: "Women fit" },
+  { id: 3, img: img3, title: "Shoes" },
+  { id: 4, img: img4, title: "Mens fit" },
+  { id: 5, img: img5, title: "Bags" },
+  { id: 6, img: img6, title: "T-shirts" },
+  { id: 7, img: img7, title: "Green T-shirt" },
+  { id: 8, img: img8, title: "New Balance 993" }
 ]
+
+// Duplicate for infinite loop effect
+const loopData = [...ProductsData, ...ProductsData,...ProductsData,...ProductsData,...ProductsData]
+
 const Products = () => {
   return (
-    <div className="mt-14 mb-12">
-      <div className="container">
-        {/* Header section  */}
-        <div className="text-center mb-10 max-w-2xl mx-auto">
-          <p className="text-sm text-primary">Top selling products for you</p>
-          <h2 className="text-3xl font-bold">Products</h2>
-          <p className="text-xs  text-gray-500">
-            orem ipsum dolor sit amet consectetur
-            adipisicing elit. Quisquam, quod.
-          </p>
-        </div>
-        {/* Body section  */}
-        <div>
-          <div className="grid grid-cols-2 sm:grid-cols-3
-          md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center gap-4 sm:gap-5">
-            {/* cards section */}
-            {
-              ProductsData.map((data)=> (
-                <motion.div key={data.id}
-                  className="space-y-3 bg-primary/20 dark:bg-primary-dark p-3 rounded-md 
-                  shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-48 flex flex-col items-center text-center"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                  duration: 0.8,
-                  delay: data.id * 0.1,
-                  ease: "easeOut",
-                  }}
-                >
-                  <img src={data.img} alt={data.title}
-                  className="h-48 sm:h-52 w-full object-cover rounded-md"/>
-
-                  <div className="space-y-1 w-full">
-                    <h3 className="font-semibold text-cyan-600 dark:text-cyan-400">{data.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{data.color}</p>
-                    <div className="flex items-center justify-center gap-1">
-                      <FaStar className="text-yellow-400"/>
-                      <span>{data.rating}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+    <div className="py-10 bg-white dark:bg-dark-three overflow-hidden">
+      <div className="flex animate-scroll gap-8 w-max">
+        {loopData.map((data, index) => (
+          <div key={index} className="flex flex-col items-center gap-2 w-24">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden
+              bg-gray-100 dark:bg-dark-two shadow-md hover:shadow-lg
+              hover:scale-105 transition-all duration-300 cursor-pointer">
+              <img
+                src={data.img}
+                alt={data.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-xs sm:text-sm text-center font-medium
+              text-gray-700 dark:text-gray-300 whitespace-nowrap">
+              {data.title}
+            </p>
           </div>
-               {/* view more */}
-               <div className="flex justify-center">
-                  <button className="btn-primary mt-10 py-2 px-6">View More</button>
-               </div>
-        </div>
+        ))}
       </div>
     </div>
   )
