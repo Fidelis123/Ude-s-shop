@@ -24,6 +24,7 @@ import OrderSuccess from './pages/OrderSuccess'
 import OrderHistory from './pages/OrderHistory'
 import NotFound from './pages/NotFound'
 import Blog from './pages/Blog'
+import QuickView from './pages/QuickView'
 
 // Admin Pages
 import AdminLogin from './admin/AdminLogin'
@@ -70,6 +71,13 @@ const App = () => {
         <Route path="/order-success" element={<OrderSuccess />} />
         <Route path="/order-history" element={<OrderHistory />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/QuickView/:id" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/QuickView" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/quickview/:id" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/quickview" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/quick-view/:id" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+        <Route path="/quick-view" element={<QuickView handleOrderPopup={handleOrderPopup} />} />
+
 
         {/* ================= ADMIN ROUTES ================= */}
         <Route path="/admin" element={<AdminLogin />} />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from "motion/react";
-import { FaStar, FaHeart } from 'react-icons/fa'
+import { FaStar, FaHeart, FaArrowRight } from 'react-icons/fa'
 import { IoHeartOutline } from 'react-icons/io5'
 
 // Existing product images from the project
@@ -77,16 +78,27 @@ const TopProducts = ({ handleOrderPopup }) => {
     <section className="py-10 bg-white dark:bg-dark-four transition-colors duration-200">
       <div className="container">
         {/* Header section */}
-        <div className="text-left mb-8">
-          <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#BF913B] dark:text-[#E5A024]">
-            Top Rated Products for You
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">
-            Top Products
-          </h2>
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
-            Explore our most popular and highly rated essentials curated for your everyday style.
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="text-left">
+            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#BF913B] dark:text-[#E5A024]">
+              Top Rated Products for You
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">
+              Top Products
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
+              Explore our most popular and highly rated essentials curated for your everyday style.
+            </p>
+          </div>
+
+          {/* View More button at top right */}
+          <Link
+            to="/top-rated"
+            className="self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-stone-700 bg-white dark:bg-dark-three hover:bg-stone-50 dark:hover:bg-dark-two hover:border-[#BF913B] dark:hover:border-[#E5A024] text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-[#BF913B] dark:hover:text-[#E5A024] transition-all duration-300 group shadow-xs hover:shadow-md cursor-pointer whitespace-nowrap"
+          >
+            <span>View More</span>
+            <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
 
         {/* 6-Column Responsive Product Grid */}
@@ -129,11 +141,16 @@ const TopProducts = ({ handleOrderPopup }) => {
                   loading="lazy"
                 />
 
-                {/* Quick Action Overlay Hint on Hover */}
-                <div className="absolute inset-x-0 bottom-2 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
-                  <div className="w-full py-1.5 text-center text-xs font-semibold rounded-lg bg-white/90 dark:bg-black/80 text-gray-900 dark:text-white backdrop-blur-xs shadow-xs">
+                {/* Quick View Button on Hover */}
+                <div className="absolute inset-x-0 bottom-2 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                  <Link
+                    to={`/QuickView/${data.id}`}
+                    state={{ product: data }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="block w-full py-2 text-center text-xs font-semibold rounded-lg bg-white/95 dark:bg-black/85 text-gray-900 dark:text-white hover:bg-[#BF913B] hover:text-white dark:hover:bg-[#E5A024] dark:hover:text-black backdrop-blur-xs shadow-md transition-all duration-200 cursor-pointer"
+                  >
                     Quick View
-                  </div>
+                  </Link>
                 </div>
               </div>
 
