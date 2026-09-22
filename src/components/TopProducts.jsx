@@ -1,94 +1,166 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "motion/react";
+import { FaStar, FaHeart } from 'react-icons/fa'
+import { IoHeartOutline } from 'react-icons/io5'
+
+// Existing product images from the project
 import img1 from '../assets/products/greenone.jpeg'
 import img2 from '../assets/products/Manfinity Streetrush Men.jpeg'
 import img3 from '../assets/products/white.jpeg'
-import { FaStar } from 'react-icons/fa'
-
+import img4 from '../assets/products/brown suilts.jpeg'
+import img5 from '../assets/products/minibag.jpg'
+import img6 from '../assets/products/New Balance 993.jpeg'
 
 const ProductsData = [
   {
     id: 1,
     img: img1,
-    title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed...",
-    price: "$29.99",
+    title: "Linen Blend Blazer",
+    price: "$89.99",
+    rating: 5,
+    reviews: 124,
   },
   {
     id: 2,
     img: img2,
-    title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed...",
-    price: "$34.99",
+    title: "Ribbed Knit Top",
+    price: "$29.99",
+    rating: 5,
+    reviews: 98,
   },
   {
     id: 3,
     img: img3,
-    title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed...",
-    price: "$24.99",
+    title: "Wide Leg Trousers",
+    price: "$59.99",
+    rating: 5,
+    reviews: 76,
+  },
+  {
+    id: 4,
+    img: img4,
+    title: "Leather Shoulder Bag",
+    price: "$79.99",
+    rating: 5,
+    reviews: 112,
+  },
+  {
+    id: 5,
+    img: img5,
+    title: "Minimal Strappy Heels",
+    price: "$49.99",
+    rating: 5,
+    reviews: 64,
+  },
+  {
+    id: 6,
+    img: img6,
+    title: "Oversized Sunglasses",
+    price: "$19.99",
+    rating: 5,
+    reviews: 53,
   },
 ]
 
-
-
 const TopProducts = ({ handleOrderPopup }) => {
-  return (
-    <div>
-      <div className="container">
-        {/* header section */}
+  const [wishlist, setWishlist] = useState({});
 
-        <div className="text-left mb-25 ">
-          <p className="text-sm text-primary">Top Rated products for you</p>
-          <h2 className="text-3xl font-bold"> Best Products</h2>
-          <p className="text-xs  text-gray-500">
-            orem ipsum dolor sit amet consectetur
-            adipisicing elit. Quisquam, quod.
+  const toggleWishlist = (id, e) => {
+    e.stopPropagation();
+    setWishlist(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
+  return (
+    <section className="py-10 bg-white dark:bg-dark-four transition-colors duration-200">
+      <div className="container">
+        {/* Header section */}
+        <div className="text-left mb-8">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#BF913B] dark:text-[#E5A024]">
+            Top Rated Products for You
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">
+            Top Products
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
+            Explore our most popular and highly rated essentials curated for your everyday style.
           </p>
         </div>
 
-        {/* body section */}
-
-        <div className="grid grid-cols-1 sm:grid-cols-2
-            md:grid-cols-3 gap-14 sm:gap-10 md:gap-6 place-items-center">
-          {
-            ProductsData.map((data) => (
-              <motion.div key={data.id} className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
-                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group w-full max-w-70"
-                initial={{ opacity: 0, scale: 0.9, y: 30,}}
-                  whileInView={{ opacity: 1, scale: 1, y:0,}}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 80,
-                    delay: data.id * 0.15,
-                    damping: 18,
-                  }}
+        {/* 6-Column Responsive Product Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6">
+          {ProductsData.map((data, index) => (
+            <motion.div
+              key={data.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.08,
+                ease: "easeOut"
+              }}
+              onClick={() => handleOrderPopup && handleOrderPopup(data)}
+              className="group flex flex-col cursor-pointer"
+            >
+              {/* Image Card Container */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#F6F4F0] dark:bg-[#201813] border border-black/5 dark:border-white/5 transition-all duration-300 group-hover:shadow-md">
+                {/* Wishlist Heart Button */}
+                <button
+                  type="button"
+                  onClick={(e) => toggleWishlist(data.id, e)}
+                  aria-label="Add to wishlist"
+                  className="absolute top-2.5 right-2.5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/70 dark:bg-black/40 text-gray-700 dark:text-gray-200 backdrop-blur-xs transition-all duration-200 hover:scale-110 hover:text-red-500 active:scale-90 shadow-xs"
                 >
-                {/* image section */}
-                <div className="h-25">
-                  <img src={data.img} alt={data.title} className="h-48 w-44 rounded-2xl max-w-full block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md object-cover"/>
-                </div>
-                <div className="p-4 text-center mt-5 ">
-                  {/* start rating */}
-                  <div className="w-full flex items-center
-                    justify-center gap-1">
-                    <FaStar className="text-yellow-500"/>
-                    <FaStar className="text-yellow-500"/>
-                    <FaStar className="text-yellow-500"/>
-                    <FaStar className="text-yellow-500"/>
+                  {wishlist[data.id] ? (
+                    <FaHeart className="h-4 w-4 text-red-500" />
+                  ) : (
+                    <IoHeartOutline className="h-4 w-4 hover:text-red-500 transition-colors" />
+                  )}
+                </button>
+
+                {/* Product Image */}
+                <img
+                  src={data.img}
+                  alt={data.title}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+
+                {/* Quick Action Overlay Hint on Hover */}
+                <div className="absolute inset-x-0 bottom-2 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
+                  <div className="w-full py-1.5 text-center text-xs font-semibold rounded-lg bg-white/90 dark:bg-black/80 text-gray-900 dark:text-white backdrop-blur-xs shadow-xs">
+                    Quick View
                   </div>
-                  <h1 className="text-xl font-bold">{data.title}</h1>
-                  <p className="text-gray-500 group-hover:text-white 
-                  duration-300 text-sm line-clamp-2">{data.description}</p>
-                  <button className="btn-primary mt-2" onClick={handleOrderPopup}>Order Now</button>
                 </div>
-              </motion.div>
-            ))
-          }
+              </div>
+
+              {/* Product Info Section (Below Image) */}
+              <div className="pt-3 text-left">
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate group-hover:text-[#BF913B] dark:group-hover:text-[#E5A024] transition-colors">
+                  {data.title}
+                </h3>
+                <p className="font-bold text-sm sm:text-base text-gray-900 dark:text-white mt-0.5">
+                  {data.price}
+                </p>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <div className="flex text-[#B8701B] dark:text-[#E5A024] gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className="h-3 w-3 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 font-normal">
+                    ({data.reviews})
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
