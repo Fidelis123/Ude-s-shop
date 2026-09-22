@@ -43,7 +43,7 @@ const footer = () => {
     const [isopen, setIsOpen] = React.useState(false);
 
   return (
-    <div style={BannerImg} className="text-white">
+    <div style={BannerImg} className="text-white h-60">
         <div className="container py-10 ">
             <motion.div 
             initial={{ opacity: 0}}
@@ -56,14 +56,16 @@ const footer = () => {
             <div className="py-8 px-4">
                 <h1 className="sm:text-3xl text-xl font-bold 
                     sm:text-left text-justify  mb-3 flex 
-                    items-center gap-3"> 
+                    items-center gap-3 whitespace-nowrap"> 
                 <img src={FooterLogo} alt="" className="max-w-15  rounded-4xl " /> 
                 Ude's shop</h1>
-                <p>-- SHOP MORE, SAVE MORE --</p>
+                <p className="text-sm sm:text-base text-gray-300 whitespace-nowrap">
+                    -- SHOP MORE, SAVE MORE --
+                </p>
             </div> 
             {/* Footer links details  */}
-            <div className="grid grid-cols-3  sm:grid-cols-3 
-                col-span-2 md:pl-10">
+            <div className="grid grid-cols-2  sm:grid-cols-3 
+                col-span-2 md:pl-10 whitespace-nowrap">
                 <div>
                     <div className="py-8 px-4">
                         <h1 className="sm:text-xl text-xl font-bold 

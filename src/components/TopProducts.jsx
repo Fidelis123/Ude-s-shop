@@ -11,21 +11,22 @@ const ProductsData = [
     id: 1,
     img: img1,
     title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed days.",
+    description: "Effortless, everyday style designed for your relaxed...",
+    price: "$29.99",
   },
-
   {
     id: 2,
     img: img2,
     title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed days.",
+    description: "Effortless, everyday style designed for your relaxed...",
+    price: "$34.99",
   },
-
   {
     id: 3,
     img: img3,
     title: "Casual wear",
-    description: "Effortless, everyday style designed for your relaxed days.",
+    description: "Effortless, everyday style designed for your relaxed...",
+    price: "$24.99",
   },
 ]
 
@@ -53,7 +54,7 @@ const TopProducts = ({ handleOrderPopup }) => {
           {
             ProductsData.map((data) => (
               <motion.div key={data.id} className="rounded-2xl bg-white dark:bg-primary-dark hover:bg-black p-5
-                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group w-full max-w-[280px]"
+                dark:hover:bg-dark-one hover:text-white relative shadow-xl duration-300 group w-full max-w-70"
                 initial={{ opacity: 0, scale: 0.9, y: 30,}}
                   whileInView={{ opacity: 1, scale: 1, y:0,}}
                   viewport={{ once: true, amount: 0.2 }}
