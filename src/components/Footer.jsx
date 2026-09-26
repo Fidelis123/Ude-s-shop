@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 
 import { FaHeadset } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 // Footer background
@@ -374,7 +375,7 @@ const Footer = () => {
       {/* =========================
           CUSTOMER SERVICE WIDGET
       ========================= */}
-      <div
+      <Link to="/contact"
         className="
           fixed
           bottom-4
@@ -450,7 +451,7 @@ const Footer = () => {
           <FaHeadset size={20} />
         </button>
 
-      </div>
+      </Link>
 
     </footer>
   );
