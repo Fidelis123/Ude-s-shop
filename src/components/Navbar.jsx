@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/website/logo.png";
 import { FaUser } from "react-icons/fa6";
+import { IoHeartOutline } from 'react-icons/io5'
 
 import { IoMdSearch } from "react-icons/io";
 import {
@@ -37,11 +38,10 @@ const Menu = [
     name: "Womens Wear",
     link: "/womens-wear",
   },
-  {
-    id: 5,
-    name: "Contact",
-    link: "/Contact",
-  },
+
+  
+
+  
 ];
 
 
@@ -53,21 +53,7 @@ const DropdownLinks = [
     name: "Trending",
     link: "/trending",
   },
-  {
-    id: 2,
-    name: "Best Selling",
-    link: "/best-selling",
-  },
-  {
-    id: 3,
-    name: "Top Rated",
-    link: "/top-rated",
-  },
-  {
-    id: 4,
-    name: "Blog",
-    link: "/blog",
-  },
+  
 ];
 
 
@@ -158,17 +144,25 @@ const Navbar = ({ handleOrderPopup }) => {
               <button
                 onClick={handleOrderPopup}
                 className="hidden  btn-primary sm:flex items-center 
-                gap-2 h-9 px-3.5 sm:px-4.5 rounded-full 
+                px-2 sm:px-2 py-2 rounded-full 
                 text-xs sm:text-sm font-semibold cursor-pointer
-                hover:scale-105 transition-all duration-300 group"
+                transition-all duration-300 group"
               >
-                <span className="hidden sm:inline">
-                  Order
-                </span>
 
-                <FaCartShopping className="text-sm sm:text-base
-                group-hover:scale-110 transition-transform duration-200" />
+                <FaCartShopping className="text-sm sm:text-base"/>
               </button>
+
+              {/* Liked button - Desktop only */}
+
+              <Link to="/liked"
+               className="relative hidden sm:block">
+                  <button className="flex items-center gap-2 cursor-pointer
+                 px-2 py-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 
+                 transition-all duration-200">
+                  <IoHeartOutline className="text-lg"/>
+                 </button>
+                 
+              </Link>
 
               {/* DARK MODE - DESKTOP ONLY */}
               <div className="hidden sm:block">
@@ -176,13 +170,14 @@ const Navbar = ({ handleOrderPopup }) => {
               </div>
 
               {/* USER PROFILE - DESKTOP ONLY */}
-              <div className="relative hidden sm:block">
+              <Link to="/profile" 
+              className="relative hidden sm:block">
                 <button className="flex items-center gap-2 cursor-pointer
-                 px-3 py-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 
+                 px-2 py-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 
                  transition-all duration-200">
                   <FaUser className="text-lg" />
                 </button>
-              </div>
+              </Link>
 
               {/* MOBILE MENU BUTTON */}
               <button
@@ -237,6 +232,8 @@ const Navbar = ({ handleOrderPopup }) => {
                 {item.name}
               </a>
 
+              
+
             </li>
           ))}
 
@@ -257,8 +254,8 @@ const Navbar = ({ handleOrderPopup }) => {
             </a>
 
             <div
-              className="absolute z-1000 hidden group-hover:block w-37.5
-              right-0 rounded-md p-2 bg-accent/20 shadow-md"
+              className="absolute  z-1000 hidden group-hover:block w-37.5
+              right-0 rounded-md p-2 bg-accent/80 shadow-md"
             >
               <ul>
                 {DropdownLinks.map((data) => (
@@ -276,6 +273,18 @@ const Navbar = ({ handleOrderPopup }) => {
                 ))}
               </ul>
             </div>
+          </li>
+
+          {/* contact */}
+
+          <li>
+            <a href="/contact" className="inline-block px-3 py-1 text-sm font-medium hover:text-extra transition-all duration-200">
+            Contact
+            </a>
+
+            <a href="/blog" className="inline-block px-3 py-1 text-sm font-medium hover:text-extra transition-all duration-200">
+            Blog
+            </a>
           </li>
 
         </ul>
@@ -304,16 +313,12 @@ const Navbar = ({ handleOrderPopup }) => {
             <button
               onClick={handleOrderPopup}
               className="btn-primary flex 
-              items-center gap-2 h-9 px-4 
+              items-center h-9 px-4 
               sm:px-4.5 rounded-full text-xs 
               sm:text-sm font-semibold cursor-pointer 
-              hover:scale-105 transition-all duration-300 group"
+              transition-all duration-300 group"
             >
-              <span>Order</span> 
-
-
-              <FaCartShopping className="text-base group-hover:scale-110 
-                transition-transform duration-200" />
+              <FaCartShopping className="text-base" />
             </button>
 
             {/* Darkmode */}
@@ -377,8 +382,33 @@ const Navbar = ({ handleOrderPopup }) => {
 
               ))}
 
+              {/* Contact */}
+            <li>
 
-              {/* Mobile Trending Dropdown */}
+              <a
+                href="/contact"
+                onClick={closeMenu}
+                className="block px-4 py-3 rounded-lg font-medium text-black/80
+              hover:bg-white/20 hover:text-white hover:pl-6
+                transition-all duration-200"
+              >
+                Contact
+              </a>
+
+              <a
+                href="/blog"
+                onClick={closeMenu}
+                className="block px-4 py-3 rounded-lg font-medium text-black/80
+              hover:bg-white/20 hover:text-white hover:pl-6
+                transition-all duration-200"
+              >
+                Blog
+              </a>
+
+            </li>
+
+
+              {/* Mobile Categories Dropdown */}
               <li className="border-t border-white pt-2 mt-2">
 
                 <button
@@ -389,7 +419,7 @@ const Navbar = ({ handleOrderPopup }) => {
                   transition-all duration-200"
                 >
                   <span className="font-medium">
-                    Trending
+                    Categories
                   </span>
 
                   <FaCaretDown

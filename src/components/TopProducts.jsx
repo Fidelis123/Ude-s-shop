@@ -6,7 +6,7 @@ import { IoHeartOutline } from 'react-icons/io5'
 
 // Existing product images from the project
 import img1 from '../assets/products/greenone.jpeg'
-import img2 from '../assets/products/Manfinity Streetrush Men.jpeg'
+import img2 from '../assets/products/streetrush.jpeg'
 import img3 from '../assets/products/white.jpeg'
 import img4 from '../assets/products/brown suilts.jpeg'
 import img5 from '../assets/products/minibag.jpg'
@@ -80,7 +80,7 @@ const TopProducts = ({ handleOrderPopup }) => {
         {/* Header section */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div className="text-left">
-            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#BF913B] dark:text-[#E5A024]">
+            <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-crown dark:text-hoverdark">
               Top Rated Products for You
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">
@@ -94,7 +94,12 @@ const TopProducts = ({ handleOrderPopup }) => {
           {/* View More button at top right */}
           <Link
             to="/top-rated"
-            className="self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-stone-700 bg-white dark:bg-dark-three hover:bg-stone-50 dark:hover:bg-dark-two hover:border-[#BF913B] dark:hover:border-[#E5A024] text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-[#BF913B] dark:hover:text-[#E5A024] transition-all duration-300 group shadow-xs hover:shadow-md cursor-pointer whitespace-nowrap"
+            className="self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 
+            rounded-full border border-gray-300 dark:border-stone-700 bg-white dark:bg-dark-three
+             hover:bg-stone-50 dark:hover:bg-dark-two hover:border-crown 
+            dark:hover:border-hoverdark text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200
+             hover:text-crown dark:hover:text-hoverdark transition-all duration-300 group shadow-xs hover:shadow-md 
+             cursor-pointer whitespace-nowrap"
           >
             <span>View More</span>
             <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
@@ -118,7 +123,7 @@ const TopProducts = ({ handleOrderPopup }) => {
               className="group flex flex-col cursor-pointer"
             >
               {/* Image Card Container */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#F6F4F0] dark:bg-[#201813] border border-black/5 dark:border-white/5 transition-all duration-300 group-hover:shadow-md">
+              <div className="relative aspect-3/4 w-full overflow-hidden rounded-2xl bg-bgwhite dark:bg-bgdark border border-black/5 dark:border-white/5 transition-all duration-300 group-hover:shadow-md">
                 {/* Wishlist Heart Button */}
                 <button
                   type="button"
@@ -142,12 +147,15 @@ const TopProducts = ({ handleOrderPopup }) => {
                 />
 
                 {/* Quick View Button on Hover */}
-                <div className="absolute inset-x-0 bottom-2 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                <div className="absolute inset-x-0 bottom-2 px-2 opacity-0 group-hover:opacity-100 transition-all 
+                duration-300 transform translate-y-1 group-hover:translate-y-0">
                   <Link
                     to={`/QuickView/${data.id}`}
                     state={{ product: data }}
                     onClick={(e) => e.stopPropagation()}
-                    className="block w-full py-2 text-center text-xs font-semibold rounded-lg bg-white/95 dark:bg-black/85 text-gray-900 dark:text-white hover:bg-[#BF913B] hover:text-white dark:hover:bg-[#E5A024] dark:hover:text-black backdrop-blur-xs shadow-md transition-all duration-200 cursor-pointer"
+                    className="block w-full py-2 text-center text-xs font-semibold rounded-lg bg-white/95 dark:bg-black/85
+                     text-gray-900 dark:text-white hover:bg-crown hover:text-white dark:hover:bg-hoverdark
+                     dark:hover:text-black backdrop-blur-xs shadow-md transition-all duration-200 cursor-pointer"
                   >
                     Quick View
                   </Link>
@@ -156,14 +164,15 @@ const TopProducts = ({ handleOrderPopup }) => {
 
               {/* Product Info Section (Below Image) */}
               <div className="pt-3 text-left">
-                <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate group-hover:text-[#BF913B] dark:group-hover:text-[#E5A024] transition-colors">
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-gray-100 truncate 
+                group-hover:text-crown dark:group-hover:text-hoverdark transition-colors">
                   {data.title}
                 </h3>
                 <p className="font-bold text-sm sm:text-base text-gray-900 dark:text-white mt-0.5">
                   {data.price}
                 </p>
                 <div className="flex items-center gap-1.5 mt-1">
-                  <div className="flex text-[#B8701B] dark:text-[#E5A024] gap-0.5">
+                  <div className="flex text-crown dark:text-hoverdark gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-3 w-3 fill-current" />
                     ))}

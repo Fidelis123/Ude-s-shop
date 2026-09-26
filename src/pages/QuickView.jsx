@@ -6,7 +6,7 @@ import { motion } from 'motion/react'
 
 // Existing product images fallback
 import img1 from '../assets/products/greenone.jpeg'
-import img2 from '../assets/products/Manfinity Streetrush Men.jpeg'
+import img2 from '../assets/products/streetrush.jpeg'
 import img3 from '../assets/products/white.jpeg'
 import img4 from '../assets/products/brown suilts.jpeg'
 import img5 from '../assets/products/minibag.jpg'
